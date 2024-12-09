@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="assets/logo.png" type="image/x-icon">
+  <title>NoteNook</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Desktop Bar -->
+<div class="desktop-bar">
+    <div class="left-section">
+      <img src="assets/logo.png" alt="Logo" id="title-logo">
+      <span id="title-text">NoteNook</span>
+    </div>
+    <div class="right-section">
+      <span id="current-date"></span>
+      <span id="current-time"></span>
+    </div>
+  </div>  
+<!-- Window - Notes -->
+    <div class="window" id="window-notes">
+        <div class="window-bar" id="window-bar">
+          <span class="window-title">Notes</span>
+          <button class="window-button-close" onclick="closeWindow()">X</button>
+        </div>
+        <div class="content-area">
+            <textarea id="typing-area" placeholder="Type notes here..."></textarea>
+        </div>
+      </div>
+  
+  <!-- Window - Links -->
+  <div class="window" id="window-links">
+    <div class="window-bar" id="window-bar">
+      <span class="window-title">Links</span>
+      <button class="window-button-close" onclick="closeWindow()">X</button>
+    </div>
+    <div class="content-area">
+      <form id="link-form">
+        <input type="text" id="nickname" placeholder="Enter Nickname" required>
+        <input type="url" id="url" placeholder="Enter URL" required>
+        <button class="window-button-submit" type="submit">Save Link</button>
+      </form>
+      <ul id="link-list"></ul>
+    </div>
+  </div>
+  
+<!-- Window - Images -->
+<div class="window" id="window-images">
+    <div class="window-bar" id="window-bar">
+        <span class="window-title">Images</span>
+      <button class="window-button-close" onclick="closeWindow()">X</button>
+    </div>
+    <div class="content-area">
+      <input type="file" id="image-upload" accept="image/*" multiple onchange="previewImages(event)">
+      <br><br><span>Preview of Uploaded Images:</span><br><br>
+      <div id="image-preview-container"></div>
+    </div>
+  </div>
+
+  <!-- Window - Sketches -->
+
+  <div class="window" id="window-sketch">
+    <div class="window-bar" id="window-bar">
+        <span class="window-title">Sketch</span>
+        <button class="window-button-close" onclick="closeSketchWindow()">X</button>
+    </div>
+    <div class="content-area">
+        <canvas id="sketch-canvas"></canvas>
+        <div id="controls">
+            <button onclick="clearCanvas()">Clear</button>
+        </div>
+    </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
